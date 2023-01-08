@@ -7,6 +7,9 @@ import LeftPanel from "./LeftPanel";
 import Posts from "./Posts";
 import { Route, Routes } from "react-router-dom";
 
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function App() {
   const apiUrl = process.env.REACT_APP_API_URL;
   const pageId = process.env.REACT_APP_MAIN_PAGE_ID;
@@ -22,7 +25,10 @@ export default function App() {
               path="/posts/author/:name"
               element={<Posts apiUrl={apiUrl} />}
             />
-            <Route path="/posts/:postId" element={<Posts apiUrl={apiUrl} />} />
+            <Route 
+              path="/posts/:postId" 
+              element={<Posts apiUrl={apiUrl} />} 
+            /> 
             <Route
               path="/*"
               element={<MainContent apiUrl={apiUrl} pageId={pageId} />}
